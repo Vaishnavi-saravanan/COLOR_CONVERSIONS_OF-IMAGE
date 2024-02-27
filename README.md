@@ -1,4 +1,4 @@
-![Screenshot 2024-02-27 214245](https://github.com/Vaishnavi-saravanan/COLOR_CONVERSIONS_OF-IMAGE/assets/118541897/27bd9c73-a6c3-4912-9ba0-59c5f3ba11a5)### EX-01 COLOR_CONVERSIONS_OF-IMAGE
+### EX-01 COLOR_CONVERSIONS_OF-IMAGE
 # AIM
 To write a python program using OpenCV to do the following image manipulations.
 
@@ -14,86 +14,87 @@ iv)To perform the color conversion between RGB, BGR, HSV, and YCbCr color models
 # Anaconda - Python 3.7
 
 # Algorithm:
-# Step1: 
-Choose an image and save it as a filename.jpg ,
-# Step2: 
-Use imread(filename, flags) to read the file.
-# Step3: 
-Use imshow(window_name, image) to display the image.
-# Step4: 
-Use imwrite(filename, image) to write the image.
-# Step5: 
-End the program and close the output image windows.
-# Step6: 
-Convert BGR and RGB to HSV and GRAY
-# Step7: 
-Convert HSV to RGB and BGR
-# Step8: 
-Convert RGB and BGR to YCrCb
-# Step9: 
-Split and Merge RGB Image
-# Step10: 
-Split and merge HSV Image
+Step1: Choose an image and save it as a filename.jpg ,
+Step2: Use imread(filename, flags) to read the file.
+Step3: Use imshow(window_name, image) to display the image.
+Step4: Use imwrite(filename, image) to write the image.
+Step5: End the program and close the output image windows.
+Step6: Convert BGR and RGB to HSV and GRAY
+Step7: Convert HSV to RGB and BGR
+Step8: Convert RGB and BGR to YCrCb
+Step9: Split and Merge RGB Image
+Step10: Split and merge HSV Image
 ### Program:
 ### Developed By: VAISHNAVI S
 ### Register Number: 212222230165
 ## i) Read and display the image
-   import cv2
-    image=cv2.imread('cat.jpg')
-    cv2.imshow('VAISHNAVI',image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+```
+import cv2
+image=cv2.imread('cat.jpg')
+cv2.imshow('VAISHNAVI',image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
 # OUTPUT:
 ![Screenshot 2024-02-27 210459](https://github.com/Vaishnavi-saravanan/COLOR_CONVERSIONS_OF-IMAGE/assets/118541897/0963c23c-25d6-481c-8802-af6197123b4e)
 
 
 # ii)Write the image
-    import cv2
-    image=cv2.imread('cat.jpg',0)
-    cv2.imwrite('demos.jpg',image)
+```
+import cv2
+image=cv2.imread('cat.jpg',0)
+cv2.imwrite('demos.jpg',image)
+```
 # OUTPUT:
 
 ![Screenshot 2024-02-27 214245](https://github.com/Vaishnavi-saravanan/COLOR_CONVERSIONS_OF-IMAGE/assets/118541897/1976a092-1ea6-4d0c-9b53-b52056d544ef)
 
 # iii)Shape of the Image
-   import cv2
-    image=cv2.imread('cat.jpg',1)
-    print(image.shape)
+```
+import cv2
+image=cv2.imread('cat.jpg',1)
+print(image.shape)
+```
 # OUTPUT:
 ![Screenshot 2024-02-27 214255](https://github.com/Vaishnavi-saravanan/COLOR_CONVERSIONS_OF-IMAGE/assets/118541897/d1b9998c-b4e9-42ec-914a-15cc3af7c71e)
 
 
 # iv)Access rows and columns
-   import random
-   import cv2
-   image=cv2.imread('cat.jpg',1)
-   image=cv2.resize(image,(400,400))
-   for i in range (150,200):
-      for j in range(image.shape[1]):
-          image[i][j]=[random.randint(0,255),
-                       random.randint(0,255),
-                       random.randint(0,255)] 
-    cv2.imshow('part image',image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+```
+import random
+import cv2
+image=cv2.imread('cat.jpg',1)
+image=cv2.resize(image,(400,400))
+for i in range (150,200):
+    for j in range(image.shape[1]):
+        image[i][j]=[random.randint(0,255),
+                     random.randint(0,255),
+                     random.randint(0,255)] 
+cv2.imshow('part image',image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
 # OUTPUT:
 ![Screenshot 2024-02-27 210714](https://github.com/Vaishnavi-saravanan/COLOR_CONVERSIONS_OF-IMAGE/assets/118541897/eb1df922-6ebd-4e63-9df5-7ab5fb64f1bc)
 
 
 # v)Cut and paste portion of image
-  import cv2
-  image=cv2.imread('cat.jpg',1)
-  image=cv2.resize(image,(400,400))
-  tag =image[150:200,110:160]
-  image[110:160,150:200] = tag
-  cv2.imshow('partimage1',image)
-  cv2.waitKey(0)
-  cv2.destroyAllWindows()
+```
+import cv2
+image=cv2.imread('cat.jpg',1)
+image=cv2.resize(image,(400,400))
+tag =image[150:200,110:160]
+image[110:160,150:200] = tag
+cv2.imshow('partimage1',image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
 # OUTPUT:
 ![Screenshot 2024-02-27 212226](https://github.com/Vaishnavi-saravanan/COLOR_CONVERSIONS_OF-IMAGE/assets/118541897/59daba50-eb0c-4feb-bd7e-476a418a7429)
 
 
 # vi) BGR and RGB to HSV and GRAY
+```
 import cv2
 img = cv2.imread('cat.jpg',1)
 img = cv2.resize(img,(300,200))
@@ -113,10 +114,12 @@ cv2.imshow('RGB2GRAY',gray2)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+```
 # OUTPUT:
 ![Screenshot 2024-02-27 212409](https://github.com/Vaishnavi-saravanan/COLOR_CONVERSIONS_OF-IMAGE/assets/118541897/0bc2cd35-b5dd-4465-ba4a-4b31259037a7)
 
 # vii) HSV to RGB and BGR
+```
 import cv2
 img = cv2.imread('cat.jpg')
 img = cv2.resize(img(300,200))
@@ -132,11 +135,13 @@ cv2.imshow('HSV2RGB',BGR)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+```
 # OUTPUT:
 ![Screenshot 2024-02-27 212457](https://github.com/Vaishnavi-saravanan/COLOR_CONVERSIONS_OF-IMAGE/assets/118541897/ce46b350-04cf-420c-84e5-19b657eebdfe)
 
 
 # viii) RGB and BGR to YCrCb
+```
 import cv2
 img = cv2.imread('cat.jpg')
 img = cv2.resize(img,(300,200))
@@ -150,11 +155,13 @@ cv2.imshow('BGR-2-YCrCb',YCrCb2)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+```
 # OUTPUT:
 
 ![Screenshot 2024-02-27 212637](https://github.com/Vaishnavi-saravanan/COLOR_CONVERSIONS_OF-IMAGE/assets/118541897/e7cd5f4f-f49d-4240-ba68-765323405c94)
 
 # ix) Split and merge RGB Image
+```
 import cv2
 img = cv2.imread('cat.jpg',1)
 img = cv2.resize(img,(300,200))
@@ -172,11 +179,13 @@ cv2.imshow('Merged RGB image',merged)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+```
 # OUTPUT:
 ![Screenshot 2024-02-27 212737](https://github.com/Vaishnavi-saravanan/COLOR_CONVERSIONS_OF-IMAGE/assets/118541897/a446b119-30dd-4326-942f-09531bcb3f3e)
 
 
 # x) Split and merge HSV Image
+```
 import cv2
 img = cv2.imread("cat.jpg",1)
 img = cv2.resize(img,(300,200))
@@ -193,6 +202,7 @@ cv2.imshow('Merged',merged)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+```
 # OUTPUT:
 ![Screenshot 2024-02-27 212825](https://github.com/Vaishnavi-saravanan/COLOR_CONVERSIONS_OF-IMAGE/assets/118541897/5a80493a-b669-4b08-a91d-ab895eed45b0)
 
